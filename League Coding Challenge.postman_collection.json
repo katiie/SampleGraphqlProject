@@ -16,8 +16,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query echo ($filePath: String!) {\n    echo (filePath: $filePath)\n}",
-								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+								"query": "query echo ($file: String!) {\n    echo (file: $file)\n}",
+								"variables": "{\n  \"file\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
 							}
 						},
 						"url": {
@@ -42,8 +42,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query invert ($filePath: String!) {\n    invert (filePath: $filePath)\n}",
-								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+								"query": "query invert ($file: String!) {\n    invert (file: $file)\n}",
+								"variables": "{\n  \"file\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
 							}
 						},
 						"url": {
@@ -68,8 +68,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query flatten ($filePath: String!) {\n    flatten (filePath: $filePath)\n}",
-								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+								"query": "query flatten ($file: String!) {\n    flatten (file: $file)\n}",
+								"variables": "{\n  \"file\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
 							}
 						},
 						"url": {
@@ -94,8 +94,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query sum ($filePath: String!) {\n    sum (filePath: $filePath)\n}",
-								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+								"query": "query sum ($file: String!) {\n    sum (file: $file)\n}",
+								"variables": "{\n  \"file\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
 							}
 						},
 						"url": {
@@ -120,8 +120,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query multiply ($filePath: String!) {\n    multiply (filePath: $filePath)\n}",
-								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+								"query": "query multiply ($file: String!) {\n    multiply (file: $file)\n}",
+								"variables": "{\n  \"file\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
 							}
 						},
 						"url": {
@@ -139,6 +139,56 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "invertMatrix",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/invert?file=C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"invert"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": "C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "echoMatrix",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/echo?file=C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"echo"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": "C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [

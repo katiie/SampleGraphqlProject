@@ -3,11 +3,11 @@ const {
 } = require('graphql')
 const schema = buildSchema(`
 type Query {
-  echo(filePath: String!): String
-  invert(filePath: String!): String
-  flatten(filePath: String!): String
-  sum(filePath: String!): String
-  multiply(filePath: String!): String
+  echo(file: String!): String
+  invert(file: String!): String
+  flatten(file: String!): String
+  sum(file: String!): String
+  multiply(file: String!): String
 }
 `);
-exports.scheme = schema;
+exports.schemeObj = schema;

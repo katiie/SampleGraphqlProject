@@ -3,31 +3,30 @@ const controller = require('./../manipulatorController');
 
 const root = {
     echo: async (args) => {
-        let filePath = args.filePath;
+        let filePath = args.file;
         let isValid = fileReader.validateFileType(filePath);
-        let response;
+        let response = "";
         if (isValid) {
             await fileReader.readFile(filePath).then((data) => {
-                response = [1, 2, 3].toString();
-                response += '/r/n';
-                response += [1, 2, 3].toString();
+                response = controller.echo(data.csvData, data.rowCount);
             }).catch((err) => {
+                console.error(err);
                 response = err;
             });
         } else {
             response = "CSV file type is required";
         }
-        return response;
+        return (response);
     },
     invert: async (args) => {
-        let filePath = args.filePath;
+        let filePath = args.file;
         let isValid = fileReader.validateFileType(filePath);
         let response = "";
         if (isValid) {
             await fileReader.readFile(filePath).then((data) => {
                 response = controller.invert(data.csvData, data.rowCount);
             }).catch((err) => {
-                console.error(err)
+                console.error(err);
                 response = "Invalid file type";
             });
         } else {
@@ -36,14 +35,14 @@ const root = {
         return response;
     },
     flatten: async (args) => {
-        let filePath = args.filePath;
+        let filePath = args.file;
         let isValid = fileReader.validateFileType(filePath);
         let response = "";
         if (isValid) {
             await fileReader.readFile(filePath).then((data) => {
                 response = data.csvData.toString();
             }).catch((err) => {
-                console.error(err)
+                console.error(err);
                 response = "Invalid file type";
             });
         } else {
@@ -52,14 +51,14 @@ const root = {
         return response;
     },
     sum: async (args) => {
-        let filePath = args.filePath;
+        let filePath = args.file;
         let isValid = fileReader.validateFileType(filePath);
         let response = "";
         if (isValid) {
             await fileReader.readFile(filePath).then((data) => {
                 response = controller.sum(data.csvData);
             }).catch((err) => {
-                console.error(err)
+                console.error(err);
                 response = "Invalid file type";
             });
         } else {
@@ -68,14 +67,14 @@ const root = {
         return response;
     },
     multiply: async (args) => {
-        let filePath = args.filePath;
+        let filePath = args.file;
         let isValid = fileReader.validateFileType(filePath);
         let response = "";
         if (isValid) {
             await fileReader.readFile(filePath).then((data) => {
                 response = controller.multiply(data.csvData);
             }).catch((err) => {
-                console.error(err)
+                console.error(err);
                 response = "Invalid file type";
             });
         } else {

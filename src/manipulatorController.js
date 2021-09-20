@@ -1,7 +1,4 @@
-const {
-    string
-} = require("yargs");
-
+const {StringBuilder} = require('./util/stringBuilderHelper');
 const sum = (data) => {
     let input = [...data.toString()];
     return input.reduce((previousValue, currentValue) => {
@@ -26,16 +23,22 @@ const multiply = (data) => {
 
 
 const echo = (data, row) => {
-    let res = "";
-    console.log(data);
+    let sb = new StringBuilder();
     for (let i = 0; i < row; i++) {
-        res += `${data[i].toString()}\r\\\\n`;
+        let count= row;
+        let j=0;
+        while(count > 0){
+            sb.append(`${data[i][j]}`);
+            j++;
+            count--;
+        }
+        sb.append(`\n`);
     }
-    return res;
+    return sb.toString();
 }
 
 const invert = (data, row) => {
-    let res = "";
+    let sb = new StringBuilder();
     for (let i = 0; i < row; i++) {
         let count = row;
         let invertRes = '';
@@ -46,9 +49,9 @@ const invert = (data, row) => {
             count--;
             j++;
         }
-        res += `${invertRes}\n`;
+        sb.append(`${invertRes}\n`);
     }
-    return res;
+    return sb.toString();
 }
 
 module.exports = {

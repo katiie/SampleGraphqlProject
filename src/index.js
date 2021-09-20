@@ -2,29 +2,19 @@ const express = require('express');
 const {
   graphqlHTTP
 } = require('express-graphql');
-const {
-  buildSchema
-} = require('graphql')
 const app = express();
-//const {schema} = require('./graphqlModules/schema');
-const {root} = require('./graphqlModules/resolver');
+const {schemeObj} = require('./graphqlModules/schema');
+const {
+  root
+} = require('./graphqlModules/resolver');
 const cors = require('cors');
 
 app.use(cors());
-const port = process.env.SERVER_PORT || 4000; 
+const port = process.env.SERVER_PORT || 4000;
 
-let schema = buildSchema(`
-  type Query {
-    echo(filePath: String!): String
-    invert(filePath: String!): String
-    flatten(filePath: String!): String
-    sum(filePath: String!): String
-    multiply(filePath: String!): String
-  }
-`);
 app.use('/graphql',
   graphqlHTTP({
-    schema: schema,
+    schema: schemeObj,
     rootValue: root,
     graphiql: true,
   }));
@@ -32,5 +22,23 @@ app.use('/graphql',
 app.get("/", (req, res) => {
   res.send("Welcome");
 })
+
+//returns matrix string format as text/json
+app.get("/echo", (req, res) => {
+  res.set('content-type', 'text/json');
+  root.echo({file: req.query.file}).then((data)=>{
+    res.send(data)
+  })
+})
+
+//returns matrix string format as text/json
+app.get("/invert", (req, res) => {
+  res.set('content-type', 'text/json');
+  root.invert({file: req.query.file}).then((data)=>{
+    res.send(data)
+  })
+})
+
+
 app.listen(port);
-console.log(`app is listening on port: ${port}`);
+console.info(`app is listening on port: ${port}`);

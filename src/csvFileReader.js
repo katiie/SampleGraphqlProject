@@ -25,14 +25,14 @@ const readFile = (fileName) => {
                         csvData
                     });
                 } else {
-                    reject("Number of rows and columns must be equal")
+                    reject("Number of rows and columns must be equal");
                 }
             });
     })
 }
 
 const validateFileType = (name) => {
-    if (name.endsWith('.csv')) {
+    if (name && name.endsWith('.csv')) {
         return true;
     }
     return false;
