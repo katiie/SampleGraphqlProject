@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "8776ff9c-9189-4a12-9ae3-ed30aeef8c69",
+		"name": "League Coding Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "echo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query echo ($filePath: String!) {\n    echo (filePath: $filePath)\n}",
+								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query invert ($filePath: String!) {\n    invert (filePath: $filePath)\n}",
+								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "flatten",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query flatten ($filePath: String!) {\n    flatten (filePath: $filePath)\n}",
+								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query sum ($filePath: String!) {\n    sum (filePath: $filePath)\n}",
+								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query multiply ($filePath: String!) {\n    multiply (filePath: $filePath)\n}",
+								"variables": "{\n  \"filePath\": \"C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "any",
+			"description": "URL for the request."
+		}
+	]
+}
