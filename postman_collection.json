@@ -141,37 +141,26 @@
 			]
 		},
 		{
-			"name": "invertMatrix",
+			"name": "echo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
-				"url": {
-					"raw": "http://localhost:4000/invert?file=C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"invert"
-					],
-					"query": [
+				"body": {
+					"mode": "formdata",
+					"formdata": [
 						{
 							"key": "file",
-							"value": "C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv"
+							"type": "file",
+							"src": "",
+							"disabled": true
 						}
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "echoMatrix",
-			"request": {
-				"method": "GET",
-				"header": [],
+				},
 				"url": {
-					"raw": "http://localhost:4000/echo?file=C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv",
+					"raw": "http://localhost:4000/echo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -179,12 +168,138 @@
 					"port": "4000",
 					"path": [
 						"echo"
-					],
-					"query": [
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invert",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
 						{
 							"key": "file",
-							"value": "C:/Users/LENOVO/Downloads/leaguetakehomecodingchallenge/matrix.csv"
+							"type": "file",
+							"src": "",
+							"disabled": true
 						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/invert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"echo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "flatten",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/flatten",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"flatten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sum",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"sum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "multiply",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/multiply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"multiply"
 					]
 				}
 			},

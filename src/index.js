@@ -1,16 +1,10 @@
 const express = require('express');
-const {
-  graphqlHTTP
-} = require('express-graphql');
+const {graphqlHTTP} = require('express-graphql');
 const app = express();
-const {schemeObj} = require('./graphqlModules/schema');
-const {
-  root
-} = require('./graphqlModules/resolver');
-const cors = require('cors');
-
-app.use(cors());
+const { schemeObj} = require('./graphqlModules/schema');
+const { root} = require('./graphqlModules/resolver');
 const port = process.env.SERVER_PORT || 4000;
+const routes = require('./routes/index');
 
 app.use('/graphql',
   graphqlHTTP({
@@ -23,22 +17,7 @@ app.get("/", (req, res) => {
   res.send("Welcome");
 })
 
-//returns matrix string format as text/json
-app.get("/echo", (req, res) => {
-  res.set('content-type', 'text/json');
-  root.echo({file: req.query.file}).then((data)=>{
-    res.send(data)
-  })
-})
-
-//returns matrix string format as text/json
-app.get("/invert", (req, res) => {
-  res.set('content-type', 'text/json');
-  root.invert({file: req.query.file}).then((data)=>{
-    res.send(data)
-  })
-})
-
+routes.register(app);
 
 app.listen(port);
 console.info(`app is listening on port: ${port}`);

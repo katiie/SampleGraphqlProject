@@ -1,8 +1,8 @@
-const {StringBuilder} = require('./util/stringBuilderHelper');
+const {StringBuilder} = require('./../util/stringBuilderHelper');
 const sum = (data) => {
-    let input = [...data.toString()];
+    let input = data.toString().split(',');
     return input.reduce((previousValue, currentValue) => {
-        if (!isNaN(currentValue)) {
+        if (Number(currentValue)) {
             return parseInt(previousValue) + parseInt(currentValue);
         } else {
             return previousValue;
@@ -11,9 +11,9 @@ const sum = (data) => {
 };
 
 const multiply = (data) => {
-    let input = [...data.toString()];
+    let input = data.toString().split(',');
     return input.reduce((previousValue, currentValue) => {
-        if (!isNaN(currentValue)) {
+        if (Number(currentValue)) {
             return parseInt(previousValue) * parseInt(currentValue);
         } else {
             return previousValue;
@@ -28,7 +28,8 @@ const echo = (data, row) => {
         let count= row;
         let j=0;
         while(count > 0){
-            sb.append(`${data[i][j]}`);
+            let delimiter= count> 1 ?",":"";
+            sb.append(`${data[i][j]}${delimiter}`);
             j++;
             count--;
         }
@@ -44,8 +45,9 @@ const invert = (data, row) => {
         let invertRes = '';
         let j = 0;
         while (count > 0) {
+            let delimiter= count> 1 ?",":"";
             let rowData = data[j];
-            invertRes += `${rowData[i]}`;
+            invertRes += `${rowData[i]}${delimiter}`;
             count--;
             j++;
         }
